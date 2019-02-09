@@ -75,6 +75,8 @@ sed -i 's/bobby/sexy/g' .bashrc
 #
 # need to put my vim stuff in a place to easilly get
 #
+curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
 ## cd ~
 ## wget vim.tar
 ## 

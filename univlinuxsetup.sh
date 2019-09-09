@@ -70,13 +70,31 @@ fi
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
 
-sed -i 's/bobby/sexy/g' .bashrc
+# apt based
+sudo apt-get install fonts-powerline
+
+# dnf based
+sudo dnf install powerline-fonts
+
+# script 
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+sed -i 's/bobby/powerline/g' .bashrc
+
 
 #
 # need to put my vim stuff in a place to easilly get
 #
-curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
-git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    
 ## cd ~
 ## wget vim.tar
 ## 
